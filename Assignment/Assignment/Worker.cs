@@ -6,7 +6,7 @@ namespace Assignment
 {
 	public class Worker : IWorker
 	{
-		public async Task RunAsync()
+		public Task RunAsync()
 		{
 			throw new NotImplementedException();
 		}

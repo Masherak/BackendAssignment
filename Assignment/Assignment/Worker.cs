@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Assignment.Connection;
+using Assignment.Converter;
 using Assignment.CSV;
 using Assignment.Interfaces;
 
@@ -23,6 +24,12 @@ namespace Assignment
 			var converter = new CsvConverter(contentAsString);
 			var result = converter.ConvertContent();
 
+			var comparer = new CurrencyComparer();
+			var output = comparer.GenerateCombinations(result);
+
+			Console.Write(output);
+			Console.WriteLine("Press enter to continue...");
+			Console.ReadLine();
 		}
 	}
 }

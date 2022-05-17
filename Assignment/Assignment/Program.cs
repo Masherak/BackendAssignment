@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Assignment
 {
@@ -10,8 +9,9 @@ namespace Assignment
 			var startup = new Startup();
 
 			var worker = startup.GetWorker();
+			var stringWriter = startup.GetStringWriter();
 
-			await worker.RunAsync();
+			await worker.RunAsync(stringWriter);
 		}
 	}
 }

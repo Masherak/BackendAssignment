@@ -1,7 +1,7 @@
-using System;
 using Assignment.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Assignment
 {
@@ -11,6 +11,7 @@ namespace Assignment
 		private readonly IServiceProvider _provider;
 
 		public IWorker GetWorker() => _provider.GetRequiredService<IWorker>();
+		public IStringWriter GetStringWriter() => _provider.GetRequiredService<IStringWriter>();
 
 		public Startup()
 		{
@@ -26,6 +27,7 @@ namespace Assignment
 			var services = new ServiceCollection();
 
 			services.AddSingleton<IWorker, Worker>();
+			services.AddSingleton<IStringWriter, StringConsoleWriter>();
 
 			return services;
 		}

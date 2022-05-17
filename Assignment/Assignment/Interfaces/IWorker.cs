@@ -4,6 +4,6 @@ namespace Assignment.Interfaces
 {
 	public interface IWorker
 	{
-		Task RunAsync();
+		Task RunAsync(IStringWriter writer);
 	}
 }
